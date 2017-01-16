@@ -1,7 +1,30 @@
-Copyright 2016 Luca Ridarelli
+APPLE ][ Stellation Two "The Mill" 6809 OS/9 daughter-board PCB and Prom code.
 
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+DESCRIPTION
 
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+This project contains schematics and software of a plug-in daughter-board for the APPLE ][ Stellation Two "The Mill" 6809 OS/9 card.
+The daughter-board remaps Apple II ram as seen by the 6909 board to allows execution of Microware OS/9 .
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+This is not the original implementation of the Stellation Two daughter-board nor a clone of it.
+The original daughter-board made use of one 74S288 prom and 74LS367 Hex Buffer to create a custom memory mapping.
+
+The high cost of 74S288 prom burners and scarce availability of 74S288 proms suggested to implement a different solution.
+Then one ATmel ATF16V8C PLD has been programmed to emulate a prom with the right ram memory mapping combination.
+
+A switch has been added to allow for normal/OS9 memory mapping selection.
+
+When installing this daughter-board, chip at location U1 of the 6809 main board (74LS14)  must be exchanged with a 74lS04 as recommended in the original Stellation Two OS9 BASIC09 documentation.
+
+PARTS LIST
+
+N. Mouser        Product n.     QTY     desc
+556-AF16V8C7PU    ATF16V8C-7PU   1    Microchip    SPLD 16V8 FAM 300 GATE SPLD STD PWR 7NS    
+595-SN74LS04N     SN74LS04N      1    Texas Instruments    Hex Inv w/HV Output    
+855-D01-9922046   D01-9922046    2    Harwin     20P SIL VRT CONN HDR 2.54MM PITCH    
+633-A12EH         A12EH          1    SWITCH SPDT ON NONE ON 28VDC 28VAC    
+
+
+
+DISCLAIMER
+This application (PCB schematic and PROM code) is released under the  Creative Commons Attribution-Non Commercial-ShareAlike 4.0 International Public License.
+The Author is not responsible for any direct or indirect damage or any kind of consequence, direct or indirect, should arise from the implementation of this project.
