@@ -1,0 +1,89 @@
+%SIGNAL
+PIN   6 =  A0 
+PIN   7 =  A1 
+PIN   4 =  A2 
+PIN   5 =  A3 
+PIN   3 =  A4 
+PIN  15 =  Q0 
+PIN  14 =  Q1 
+PIN  17 =  Q2 
+PIN  16 =  Q3 
+PIN  18 =  Q4 
+PIN  19 =  Q5 
+PIN   8 =  RW 
+PIN  13 =  RWO 
+PIN   9 =  VSS 
+PIN  12 =  VSSO 
+PIN   2 =  tristate 
+%END
+
+%FIELD
+FIELD address = A4,A3,A2,A1,A0
+FIELD byte = Q5,Q4,Q3,Q2,Q1,Q0
+%END
+
+%EQUATION
+Q0 =>
+    A0 & A4
+  # A0 & A2 & A3
+  # !A0 & !A2 & !A4
+  # !A0 & !A3 & !A4
+
+Q0.oe  =>
+    !tristate
+
+Q1 =>
+    !A0 & A1
+  # A1 & A4
+  # A1 & A2 & A3
+  # A0 & !A1 & !A2 & !A4
+  # A0 & !A1 & !A3 & !A4
+
+Q1.oe  =>
+    !tristate
+
+Q2 =>
+    A2 & A4
+  # !A0 & A2 & !A3
+  # !A1 & A2 & !A3
+  # !A2 & A3 & !A4
+  # A0 & A1 & !A2 & !A4
+
+Q2.oe  =>
+    !tristate
+
+Q3 =>
+    A0 & A3
+  # A1 & A3
+  # !A2 & A3
+  # A3 & A4
+  # A0 & A1 & A2 & !A4
+
+Q3.oe  =>
+    !tristate
+
+Q4 =>
+    0 
+
+Q4.oe  =>
+    !tristate
+
+Q5 =>
+    0 
+
+Q5.oe  =>
+    !tristate
+
+RWO =>
+    RW
+
+RWO.oe  =>
+    !tristate
+
+VSSO =>
+    VSS
+
+VSSO.oe  =>
+    !tristate
+
+%END

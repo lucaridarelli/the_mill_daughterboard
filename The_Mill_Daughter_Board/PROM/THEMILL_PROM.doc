@@ -1,0 +1,234 @@
+
+*******************************************************************************
+                                 THEMILL_PROM
+*******************************************************************************
+
+CUPL(WM)        5.0a Serial# 60008009
+Device          g16v8ma  Library DLIB-h-40-8
+Created         Mon Apr 04 20:45:14 2016
+Name            THEMILL_PROM 
+Partno          00 
+Revision        01 
+Date            02/04/2016 
+Designer        Luca Ridarelli 
+Company         L&R 
+Assembly        None 
+Location        
+
+===============================================================================
+                            Expanded Product Terms
+===============================================================================
+
+Q0 =>
+    A0 & A4
+  # A0 & A2 & A3
+  # !A0 & !A2 & !A4
+  # !A0 & !A3 & !A4
+
+Q0.oe  =>
+    !tristate
+
+Q1 =>
+    !A0 & A1
+  # A1 & A4
+  # A1 & A2 & A3
+  # A0 & !A1 & !A2 & !A4
+  # A0 & !A1 & !A3 & !A4
+
+Q1.oe  =>
+    !tristate
+
+Q2 =>
+    A2 & A4
+  # !A0 & A2 & !A3
+  # !A1 & A2 & !A3
+  # !A2 & A3 & !A4
+  # A0 & A1 & !A2 & !A4
+
+Q2.oe  =>
+    !tristate
+
+Q3 =>
+    A0 & A3
+  # A1 & A3
+  # !A2 & A3
+  # A3 & A4
+  # A0 & A1 & A2 & !A4
+
+Q3.oe  =>
+    !tristate
+
+Q4 =>
+    0 
+
+Q4.oe  =>
+    !tristate
+
+Q5 =>
+    0 
+
+Q5.oe  =>
+    !tristate
+
+RWO =>
+    RW
+
+RWO.oe  =>
+    !tristate
+
+VSSO =>
+    VSS
+
+VSSO.oe  =>
+    !tristate
+
+address =>
+    A4 , A3 , A2 , A1 , A0
+
+byte =>
+    Q5 , Q4 , Q3 , Q2 , Q1 , Q0
+
+
+===============================================================================
+                                 Symbol Table
+===============================================================================
+
+Pin Variable                                    Pterms   Max     Min    
+Pol   Name              Ext     Pin     Type     Used   Pterms  Level   
+--- --------            ---     ---     ----    ------  ------  -----   
+
+    A0                          6        V        -       -       -     
+    A1                          7        V        -       -       -     
+    A2                          4        V        -       -       -     
+    A3                          5        V        -       -       -     
+    A4                          3        V        -       -       -     
+    Q0                          15       V        4       7       2     
+    Q0                  oe      15       X        1       1       1     
+    Q1                          14       V        5       7       2     
+    Q1                  oe      14       X        1       1       1     
+    Q2                          17       V        5       7       2     
+    Q2                  oe      17       X        1       1       1     
+    Q3                          16       V        5       7       2     
+    Q3                  oe      16       X        1       1       1     
+    Q4                          18       V        1       7       2     
+    Q4                  oe      18       X        1       1       1     
+    Q5                          19       V        1       7       2     
+    Q5                  oe      19       X        1       1       1     
+    RW                          8        V        -       -       -     
+    RWO                         13       V        1       7       2     
+    RWO                 oe      13       X        1       1       1     
+    VSS                         9        V        -       -       -     
+    VSSO                        12       V        1       7       2     
+    VSSO                oe      12       X        1       1       1     
+    address                     0        F        -       -       -     
+    byte                        0        F        -       -       -     
+    tristate                    2        V        -       -       -     
+
+
+LEGEND    D : default variable         F : field      G : group
+          I : intermediate variable    N : node       M : extended node
+          U : undefined                V : variable   X : extended variable
+          T : function
+
+
+===============================================================================
+                                   Fuse Plot
+===============================================================================
+
+Syn   02192 - Ac0   02193 - 
+
+Pin #19  02048  Pol -  02120  Ac1 - 
+ 00000 -x------------------------------ 
+ 00032 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 00064 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 00096 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 00128 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 00160 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 00192 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 00224 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+Pin #18  02049  Pol -  02121  Ac1 - 
+ 00256 -x------------------------------ 
+ 00288 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 00320 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 00352 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 00384 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 00416 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 00448 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 00480 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+Pin #17  02050  Pol -  02122  Ac1 - 
+ 00512 -x------------------------------ 
+ 00544 ----x---x----------------------- 
+ 00576 --------x----x---x-------------- 
+ 00608 --------x----x-------x---------- 
+ 00640 -----x---x--x------------------- 
+ 00672 -----x---x------x---x----------- 
+ 00704 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 00736 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+Pin #16  02051  Pol -  02123  Ac1 - 
+ 00768 -x------------------------------ 
+ 00800 ------------x---x--------------- 
+ 00832 ------------x-------x----------- 
+ 00864 ---------x--x------------------- 
+ 00896 ----x-------x------------------- 
+ 00928 -----x--x-------x---x----------- 
+ 00960 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 00992 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+Pin #15  02052  Pol -  02124  Ac1 - 
+ 01024 -x------------------------------ 
+ 01056 ----x-----------x--------------- 
+ 01088 --------x---x---x--------------- 
+ 01120 -----x---x-------x-------------- 
+ 01152 -----x-------x---x-------------- 
+ 01184 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 01216 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 01248 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+Pin #14  02053  Pol -  02125  Ac1 - 
+ 01280 -x------------------------------ 
+ 01312 -----------------x--x----------- 
+ 01344 ----x---------------x----------- 
+ 01376 --------x---x-------x----------- 
+ 01408 -----x---x------x----x---------- 
+ 01440 -----x-------x--x----x---------- 
+ 01472 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 01504 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+Pin #13  02054  Pol -  02126  Ac1 - 
+ 01536 -x------------------------------ 
+ 01568 ------------------------x------- 
+ 01600 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 01632 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 01664 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 01696 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 01728 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 01760 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+Pin #12  02055  Pol -  02127  Ac1 - 
+ 01792 -x------------------------------ 
+ 01824 ----------------------------x--- 
+ 01856 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 01888 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 01920 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 01952 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 01984 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 02016 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+
+
+LEGEND    X : fuse not blown 
+          - : fuse blown 
+
+===============================================================================
+                                 Chip Diagram
+===============================================================================
+
+                               ______________
+                              | THEMILL_PROM |
+                          x---|1           20|---x Vcc                      
+                 tristate x---|2           19|---x Q5                       
+                       A4 x---|3           18|---x Q4                       
+                       A2 x---|4           17|---x Q2                       
+                       A3 x---|5           16|---x Q3                       
+                       A0 x---|6           15|---x Q0                       
+                       A1 x---|7           14|---x Q1                       
+                       RW x---|8           13|---x RWO                      
+                      VSS x---|9           12|---x VSSO                     
+                      GND x---|10          11|---x                          
+                              |______________|
+

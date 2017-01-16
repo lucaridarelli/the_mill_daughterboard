@@ -1,0 +1,79 @@
+Name     THEMILL_PROM ;
+PartNo   00 ;
+Date     02/04/2016 ;
+Revision 01 ;
+Designer Luca Ridarelli ;
+Company  L&R ;
+Assembly None ;
+Location  ;
+Device   g16v8a ;
+
+/* *************** INPUT PINS *********************/
+PIN 2   = tristate               ; /*             */ 
+PIN 3   = A4                     ; /*   Switch    */ 
+PIN 4   = A2                     ; /*             */ 
+PIN 5   = A3                     ; /*             */ 
+PIN 6   = A0                     ; /*             */ 
+PIN 7   = A1                     ; /*             */ 
+PIN 8   = RW;
+PIN 9   = VSS;
+
+/* *************** OUTPUT PINS ********************/
+/*PIN [14..19] = [Q5..0];*/
+
+PIN 15 = Q0;
+PIN 14 = Q1;
+PIN 17 = Q2;
+PIN 16 = Q3;
+PIN 18 = Q4;
+PIN 19 = Q5;
+
+PIN 13 = RWO;
+PIN 12 = VSSO;
+
+field address = [A4..0];
+field byte  = [Q5..0];
+
+ byte.oe = !tristate;
+ RWO.oe = !tristate;
+ VSSO.oe = !tristate;
+
+  
+RWO = RW;
+VSSO = VSS;
+
+table address => byte {
+0 => 1;
+1 => 2;
+2 => 3;
+3 => 4;
+4 => 5;
+5 => 6;
+6 => 7;
+7 => 8;
+8 => d;
+9 => e;
+a => f;
+b => c;
+c => 0;
+d => 9;
+e => a;
+f => b;
+10 => 0;
+11 => 1;
+12 => 2;
+13 => 3;
+14 => 4;
+15 => 5;
+16 => 6;
+17 => 7;
+18 => 8;
+19 => 9;
+1a => a;
+1b => b;
+1c => c;
+1d => d;
+1e => e;
+1f => f;
+}
+
